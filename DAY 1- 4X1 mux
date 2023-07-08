@@ -1,0 +1,30 @@
+#day 1 
+4X1 MUX
+A 4x1 multiplexer (mux) is a digital circuit that selects one of four input signals and routes it to a single output based on the selected inputs. The "4x1" notation indicates that there are four inputs and one output.
+
+The basic block diagram of a 4x1 mux is as follows:
+        _______
+S0 ----|       |
+S1 ----|  MUX  |---- Output (Y)
+S2 ----|       |
+S3 ----|_______|
+        |
+In0 -----|
+        |
+In1 -----|
+        |
+In2 -----|
+        |
+In3 -----|
+The circuit has four select inputs (S0, S1, S2, S3) that determine which input (In0, In1, In2, In3) is selected and forwarded to the output (Y). The select inputs control the data path and effectively choose one of the inputs to be transmitted.
+
+Here's the truth table for a 4x1 mux:
+S3 | S2 | S1 | S0 || Y
+--------------------
+0  | 0  | 0  | 0  || In0
+0  | 0  | 0  | 1  || In1
+0  | 0  | 1  | 0  || In2
+0  | 0  | 1  | 1  || In3
+The combination of select inputs determines the input that gets selected and appears at the output. For example, if S3 = 0, S2 = 1, S1 = 0, and S0 = 1, then In1 will be selected, and the output Y will be the same as the input In1.
+
+In summary, a 4x1 mux is a digital circuit that selects one of four inputs based on the select inputs and routes it to a single output.
