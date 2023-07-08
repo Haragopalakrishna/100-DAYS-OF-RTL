@@ -1,0 +1,33 @@
+timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07.07.2023 23:24:04
+// Design Name: 
+// Module Name: mux_1
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module mux_1(
+    input s0,s1,
+    input i0,i1,i2,i3,
+    output z
+  );
+    wire sobar,s1bar;
+    assign sobar = ~s0;
+    assign s1bar = ~s1;
+    assign z = ((i0&sobar)&s1bar)|((i1&sobar)&s1)|((i2&s0)&s1bar)|((i3&s0)&s1);
+    
+endmodule
