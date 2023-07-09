@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 09.07.2023 15:04:48
+// Design Name: 
+// Module Name: dmux
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module dmux(
+    input d,
+    input [1:0] s,
+    output [3:0] i
+    );
+    wire s0bar,s1bar;
+    assign s0bar = ~s[0];
+    assign s1bar = ~s[1];
+    assign i[0] = d&s0bar&s1bar;
+    assign i[1] = d&s0bar&s[1];
+    assign i[2] = d&s[0]&s1bar;
+    assign i[3] = d&s[0]&s[1];
+    
+endmodule
