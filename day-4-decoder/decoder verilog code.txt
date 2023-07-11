@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 10.07.2023 21:14:55
+// Design Name: 
+// Module Name: dc
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module encoder(
+    input [2:0] y,
+    output [7:0] d
+    );
+    assign y0bar = ~y[0];
+    assign y1bar = ~y[1];
+    assign y2bar = ~y[2];
+    assign d[0] = y0bar&y1bar&y2bar;
+    assign d[1] = y0bar&y1bar&y[2];
+    assign d[2] = y0bar&y[1]&y2bar;
+    assign d[3] = y0bar&y[1]&y[2];
+    assign d[4] = y[0]&y1bar&y2bar;
+    assign d[5] = y[0]&y1bar&y[2];
+    assign d[6] = y[0]&y[1]&y2bar;
+    assign d[7] = y[0]&y[1]&y[2];
+    
+    
+endmodule
