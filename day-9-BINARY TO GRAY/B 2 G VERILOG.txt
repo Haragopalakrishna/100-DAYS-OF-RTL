@@ -1,0 +1,32 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 17.07.2023 16:24:56
+// Design Name: 
+// Module Name: b2g
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module b2g(
+    input [3:0] din,
+    output [3:0] dout
+    );
+    assign dout[3]=din[3];
+    assign dout[2]=din[3]^din[2];
+    assign dout[1]=din[3]^din[2]^din[1];
+    assign dout[0]=din[3]^din[2]^din[1]^din[0];
+    
+endmodule
