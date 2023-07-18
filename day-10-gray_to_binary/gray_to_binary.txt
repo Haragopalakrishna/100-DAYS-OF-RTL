@@ -1,0 +1,31 @@
+timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 18.07.2023 16:17:06
+// Design Name: 
+ //Module Name: gray_to_binary
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module gray_to_binary(
+    input [3:0] dout,
+    output [3:0] din
+    );
+assign din[3] = dout[3];
+assign din[2] = dout[3] ^ dout[2];
+assign din[1] = dout[3] ^ dout[2] ^ dout[1];
+assign din[0] = dout[3] ^ dout[2] ^ dout[1] ^ dout[0];
+endmodule
