@@ -1,0 +1,39 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 31.07.2023 18:41:25
+// Design Name: 
+// Module Name: alu
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module alu(
+    input [3:0] a,b,
+    input [2:0] segline,
+    output reg [3:0] alu_out
+    );
+    always@(*)
+    case(segline)
+    3'b000: alu_out=0;
+    3'b001: alu_out=a+b;
+    3'b010: alu_out=a-b;
+    3'b011: alu_out=a*b;
+    3'b100: alu_out=a/b;
+    3'b101: alu_out=a&b;
+    3'b110: alu_out=a|b;
+    3'b111: alu_out=1;
+    endcase
+    endmodule
