@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 04.08.2023 22:12:07
+// Design Name: 
+// Module Name: synchronous_counter
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module synchronous_counter #(parameter SIZE=4)(
+  input clk, rst_n,
+  input up,
+  output reg [3:0] cnt
+);
+
+  always@(posedge clk) begin
+    if(!rst_n) begin
+      cnt <= 4'h0;
+    end
+    else begin
+      if(up) cnt <= cnt + 1'b1;
+      else cnt <= cnt - 1'b1;
+    end
+  end
+endmodule
